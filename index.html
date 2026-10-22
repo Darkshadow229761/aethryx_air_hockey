@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Faceoff — Air Hockey</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-icon">✦</span>
+        <div>
+          <h1>Neon Faceoff</h1>
+          <p>Air hockey · first to 7 wins</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <label class="visually-hidden" for="difficulty">Bot difficulty</label>
+        <select id="difficulty">
+          <option value="easy">Easy bot</option>
+          <option value="medium" selected>Medium bot</option>
+          <option value="hard">Hard bot</option>
+        </select>
+        <button id="restart" type="button">↻ Restart</button>
+      </div>
+    </header>
+
+    <section class="scoreboard" aria-label="Scoreboard">
+      <div class="player">
+        <span class="dot player-dot"></span>
+        <div>
+          <div class="player-name">You</div>
+          <div class="score" id="playerScore">0</div>
+        </div>
+      </div>
+
+      <div class="match-label" id="matchLabel">Ready to play</div>
+
+      <div class="player player-right">
+        <div>
+          <div class="player-name">Bot</div>
+          <div class="score" id="botScore">0</div>
+        </div>
+        <span class="dot bot-dot"></span>
+      </div>
+    </section>
+
+    <div class="table-wrap">
+      <canvas id="game" width="900" height="540">
+        Your browser does not support HTML canvas.
+      </canvas>
+
+      <div class="message" id="message">
+        <div class="message-card">
+          <h2 id="messageTitle">Ready?</h2>
+          <p id="messageText">
+            Move your paddle with your mouse, finger, or WASD/arrow keys.
+            First to 7 goals wins.
+          </p>
+          <button class="primary" id="playButton" type="button">Start game</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="help">
+      <span><strong>Move:</strong> mouse or touch</span>
+      <span><strong>Tip:</strong> hit the puck at an angle</span>
+      <span><strong>Keyboard:</strong> WASD / arrow keys</span>
+    </footer>
+  </main>
+</body>
+</html>
